@@ -35,7 +35,11 @@ def load_metrics():
 
 
 st.title("📉 Customer Churn Predictor")
-st.caption("Classic ML project — predicts whether a telecom customer will leave.")
+st.title("Customer Churn Analytics & Prediction Dashboard")
+st.write(
+    "Analyze customer churn patterns, predict churn risk, "
+    "and generate business recommendations."
+)
 
 model = load_model()
 if model is None:
