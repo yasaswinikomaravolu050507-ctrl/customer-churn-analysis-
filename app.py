@@ -112,3 +112,64 @@ if st.sidebar.button("Predict churn", type="primary"):
         st.json(customer)
 else:
     st.info("Set the customer details in the sidebar, then click **Predict churn**.")
+    if probability >= 0.70:
+    risk_level = "🔴 High Risk"
+elif probability >= 0.40:
+    risk_level = "🟠 Medium Risk"
+else:
+    risk_level = "🟢 Low Risk"
+
+st.subheader("Customer Risk Level")
+st.write(risk_level)
+tab1, tab2, tab3 = st.tabs([
+    "📊 Analytics Dashboard",
+    "🔮 Churn Prediction",
+    "💡 Business Insights"
+])
+if probability >= 0.70:
+    recommendation = (
+        "Prioritize this customer for retention. "
+        "Consider a personalized offer or proactive support."
+    )
+elif probability >= 0.40:
+    recommendation = (
+        "Monitor this customer and consider targeted "
+        "engagement or loyalty offers."
+    )
+else:
+    recommendation = (
+        "Continue regular engagement and loyalty activities."
+    )
+
+st.subheader("💡 Business Recommendation")
+st.info(recommendation)
+st.header("📊 Churn Analysis")
+contract_churn = pd.crosstab(
+    df["Contract"],
+    df["Churn"]
+)
+
+st.bar_chart(contract_churn)
+total_customers = len(df)
+
+churned_customers = df["Churn"].astype(str).str.lower().isin(
+    ["yes", "true", "1"]
+).sum()
+
+churn_rate = (churned_customers / total_customers) * 100
+col1, col2, col3 = st.columns(3)
+
+col1.metric(
+    "Total Customers",
+    total_customers
+)
+
+col2.metric(
+    "Churned Customers",
+    churned_customers
+)
+
+col3.metric(
+    "Churn Rate",
+    f"{churn_rate:.2f}%"
+)
