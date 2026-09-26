@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Data & models (generated locally)
+data/*.csv
+models/*.joblib
+models/reports/*.png
+
+# Keep the folders
+!data/.gitkeep
+!models/.gitkeep
+
+# OS / IDE
+.DS_Store
+.ipynb_checkpoints/
+.vscode/

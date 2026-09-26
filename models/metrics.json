@@ -1,0 +1,12 @@
+{
+  "best_model": "LogisticRegression",
+  "roc_auc": 0.8413,
+  "precision": 0.5043,
+  "recall": 0.7834,
+  "f1": 0.6136,
+  "cv_roc_auc": {
+    "LogisticRegression": 0.8459,
+    "RandomForest": 0.821,
+    "XGBoost": 0.8374
+  }
+}
