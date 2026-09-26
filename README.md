@@ -166,6 +166,45 @@ of the real file (e.g. `TotalCharges` stored as text with blank values).
 - Serve predictions via a **FastAPI** endpoint and containerize with **Docker**.
 
 ---
+### Business Insights
+
+• Customers with short tenure may require additional retention efforts.
+• Contract type can be associated with different churn patterns.
+• Payment method can reveal differences in customer retention.
+• Customers identified as high-risk can be prioritized for targeted retention campaigns.
+
+---
+## Dashboard Features
+
+- Customer churn KPIs
+- Churn analysis
+- Customer risk classification
+- Churn probability
+- Business recommendations
+- Model performance
+
+## Project Structure
+
+customer-churn-analysis/
+
+├── data/
+
+├── docs/
+
+├── models/
+
+├── src/
+
+├── app.py
+
+├── requirements.txt
+
+└── README.md
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
 
 ## What to say about this project on your resume
 
@@ -173,3 +212,4 @@ of the real file (e.g. `TotalCharges` stored as text with blank values).
 > Regression, Random Forest, and XGBoost with cross-validated ROC-AUC, handling
 > class imbalance and delivering an interactive Streamlit app for real-time
 > scoring and model explainability.
+> 
